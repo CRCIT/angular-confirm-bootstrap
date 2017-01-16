@@ -1,8 +1,7 @@
 {
   "name": "angular.confirm.bootstrap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Client confirmation which offers the possibility to accept or cancel an action",
-  "private": true,
   "engines": {
     "node": ">=0.12.0"
   },
