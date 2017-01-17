@@ -2,8 +2,8 @@
  * angular.confirm.bootstrap
  * null
  * @license undefined
- * v0.1.2
- * 2017-01-17T11:06:35.252Z
+ * v0.1.3
+ * 2017-01-17T11:41:15.985Z
  */
 (function () {
   'use strict';
