@@ -1,6 +1,6 @@
 {
   "name": "angular-confirm-bootstrap",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Client filter to confirm or cancel an action",
   "keywords": [
     "confirm",

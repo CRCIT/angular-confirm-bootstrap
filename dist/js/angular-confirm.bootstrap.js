@@ -2,8 +2,8 @@
  * angular.confirm.bootstrap
  * null
  * @license undefined
- * v0.1.1
- * 2017-01-17T10:47:02.425Z
+ * v0.1.2
+ * 2017-01-17T11:06:35.252Z
  */
 (function () {
   'use strict';
@@ -112,7 +112,7 @@
       controller: directiveConfirmController,
       controllerAs: 'vm',
       bindToController: true
-    };
+    };
     directiveConfirmController.$inject = ["$uibModal", "$translate"];
     return directive;
 
@@ -154,7 +154,7 @@
         });
 
         modalInstance.result.then(function (data) {
-
+          
         });
       };
 
