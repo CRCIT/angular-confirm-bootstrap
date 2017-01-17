@@ -1,15 +1,16 @@
 # "Angular Confirm Bootstrap"
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-Client confirmation which offers the possibility to accept or cancel an action.
+Client confirmation which shows an uib-bootstrap modal and offers the possibility to accept or cancel an action.
 
 ## Description
 
-Para utilizar angular-confirm-bootstrap en tu proyecto:
+In order to use angular-confirm-bootstrap in your project:
 * bower install https://github.com/CRCIT/angular-confirm-bootstrap.git
-* Incluir el modulo en el bower.json en caso de no haber utilizado el comando --save al ejecutar el bower install
-* Poner directiva angular-confirm-bootstrap en un atributo del html
-* Utilizar los parámetros deseados de esta lista para personalizar el confirm:
+* Include the library in your bower.json file if you haven't previously used the option --save while executing bower install
+* Include the module 'angular.confirm.bootstrap' as an angular dependency
+* Use the directive 'angular-confirm-bootstrap' as a html element or attribute
+* You can configure the following params:
 
     *  confirmText: Type: string, text button action Ok by default 'Ok'
     *  buttonConfirmClass: Type: string, default: empty
@@ -27,4 +28,4 @@ Para utilizar angular-confirm-bootstrap en tu proyecto:
 
 ## License
 
-Copyright 2016 CRC Information Technologies - Released under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
+Copyright 2017 CRC Information Technologies - Released under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).

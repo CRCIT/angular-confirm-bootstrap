@@ -4,7 +4,9 @@
   "description": "Client filter to confirm or cancel an action",
   "keywords": [
     "confirm",
-    "plugin"
+    "plugin",
+    "angular",
+    "bootstrap"
   ],
   "ignore": [
     "**/.*",
