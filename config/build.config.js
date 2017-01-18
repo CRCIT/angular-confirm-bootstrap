@@ -6,6 +6,9 @@ module.exports = {
   // Name that will be used in angular.module
   moduleName: 'angular.confirm.bootstrap',
 
+  // Name of the js file in dist
+  distFileName: 'angular-confirm-bootstrap',
+
   // Name that will show up in text
   readableName: '"Angular Confirm Bootstrap"',
 
