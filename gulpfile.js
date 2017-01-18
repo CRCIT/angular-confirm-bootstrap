@@ -129,7 +129,7 @@ gulp.task('js',  function () {
       'src/template/**/*.js'
     ], { base: '.' }))
 
-    .pipe($g.concat(buildConfig.name.replace(".","-") + '.js'))
+    .pipe($g.concat(buildConfig.distFileName + '.js')) // angular.confirm.bootstrap
     .pipe($g.header(config.banner))
     .pipe(gulp.dest('dist/js'))
     .pipe($g.sourcemaps.init())
@@ -138,7 +138,7 @@ gulp.task('js',  function () {
         negate_iife: false
       }
     }))
-    .pipe($g.rename(buildConfig.name.replace(".","-") + '.min.js'))
+    .pipe($g.rename(buildConfig.distFileName + '.min.js'))
     .pipe($g.header(config.banner))
     .pipe($g.sourcemaps.write('./'))
     .pipe($g.size({ title: 'js' }))
@@ -155,7 +155,7 @@ gulp.task('less', function () {
     .pipe($g.progeny())
     .pipe($g.less())
     .pipe($g.autoprefixer())
-    .pipe($g.rename(buildConfig.name.replace(".","-") + '.css'))
+    .pipe($g.rename(buildConfig.distFileName + '.css'))
     .pipe($g.header(config.banner))
     .pipe(
       gulp.dest(config.paths.dist.css)
@@ -164,7 +164,7 @@ gulp.task('less', function () {
     // Minify
     .pipe($g.sourcemaps.init())
     .pipe($g.minifyCss())
-    .pipe($g.rename(buildConfig.name.replace(".","-") + '.min.css'))
+    .pipe($g.rename(buildConfig.name.distFileName + '.min.css'))
     .pipe($g.sourcemaps.write('./'))
     .pipe($g.size({ title: 'css' }))
     .pipe(
