@@ -67,8 +67,8 @@
         cancelText: vm.cancelText ? vm.cancelText : "Cancelar",
         buttonCancelIcon: vm.buttonCancelIcon ? vm.buttonCancelIcon : '',
         buttonCancelClass: vm.buttonCancelClass ? vm.buttonCancelClass : 'btn btn-default',
-        message: vm.message ? vm.message : 'Sample message',
-        title: vm.title ? vm.title : 'Sample title',
+        message: vm.message ? vm.message : '',
+        title: vm.title ? vm.title : '',
         onConfirm: vm.onConfirm,
         onCancel: vm.onCancel,
         positionButtons: vm.positionButtons ? vm.positionButtons : 'right',
@@ -94,7 +94,7 @@
         });
 
         modalInstance.result.then(function (data) {
-          
+
         });
       };
 
