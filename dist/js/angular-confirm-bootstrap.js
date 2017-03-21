@@ -2,8 +2,8 @@
  * angular.confirm.bootstrap
  * null
  * @license undefined
- * v0.1.3
- * 2017-01-18T14:36:08.718Z
+ * v0.1.4
+ * 2017-03-21T14:15:16.028Z
  */
 (function () {
   'use strict';
@@ -35,18 +35,18 @@
     };
 
     vm.actionCancel = function () {
-      if (vm.dataModal.onCancel !== undefined) {
-        if (typeof(vm.dataModal.onCancel) === typeof(Function)) {
-          vm.dataModal.onCancel();
+      if (vm.dataModal.acbOnCancel !== undefined) {
+        if (typeof(vm.dataModal.acbOnCancel) === typeof(Function)) {
+          vm.dataModal.acbOnCancel();
         }
       }
       $uibModalInstance.close(false);
     };
 
     vm.actionOk = function () {
-      if (vm.dataModal.onConfirm !== undefined) {
-        if (typeof(vm.dataModal.onConfirm) === typeof(Function)) {
-          vm.dataModal.onConfirm();
+      if (vm.dataModal.acbOnConfirm !== undefined) {
+        if (typeof(vm.dataModal.acbOnConfirm) === typeof(Function)) {
+          vm.dataModal.acbOnConfirm();
         }
       }
       $uibModalInstance.close(false);
@@ -68,19 +68,19 @@
   function angularConfirmBootstrapDirective() {
     /**
      * directive.scope.options {
-        *  confirmText: Type: string, text button action Ok by default 'Ok'
-        *  buttonConfirmClass: Type: string, default: empty
-        *  buttonConfirmIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-        *  cancelText: Type: string, text button action Ok by default 'Cancel'
-        *  buttonCancelClass: Type: string, default: empty
-        *  buttonCancelIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-        *  message: Type: string , main message
-        *  title: Type: string , title modal
-        *  onConfirm: Type: function, callback function
-        *  onCancel: Type: function, callback function
-        *  sizeModal: Type: string, size of modal by default 'lg'
-        *  positionButtons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
-        *  backdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
+        *  acbConfirmText: Type: string, text button action Ok by default 'Ok'
+        *  acbButtonConfirmClass: Type: string, default: empty
+        *  acbButtonConfirmIcon: Type: string(<i class="fa fa-..."></i>), default: empty
+        *  acbCancelText: Type: string, text button action Ok by default 'Cancel'
+        *  acbButtonCancelClass: Type: string, default: empty
+        *  acbButtonCancelIcon: Type: string(<i class="fa fa-..."></i>), default: empty
+        *  acbMessage: Type: string , main message
+        *  acbTitle: Type: string , title modal
+        *  acbOnConfirm: Type: function, callback function
+        *  acbOnCancel: Type: function, callback function
+        *  acbSizeModal: Type: string, size of modal by default 'lg'
+        *  acbPositionButtons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
+        *  acbBackdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
     * }
      **/
 
@@ -89,19 +89,19 @@
       restrict: 'EA',
       templateUrl: '',
       scope: {
-        confirmText: '@',
-        buttonConfirmClass: '@',
-        buttonConfirmIcon: '@',
-        cancelText: '@',
-        buttonCancelClass: '@',
-        buttonCancelIcon: '@',
-        message: '@',
-        title: '@',
-        onConfirm: '&',
-        onCancel: '&',
-        sizeModal: '@',
-        positionButtons: '@',
-        backdrop: '@'
+        acbConfirmText: '@',
+        acbButtonConfirmClass: '@',
+        acbButtonConfirmIcon: '@',
+        acbCancelText: '@',
+        acbButtonCancelClass: '@',
+        acbButtonCancelIcon: '@',
+        acbMessage: '@',
+        acbTitle: '@',
+        acbOnConfirm: '&',
+        acbOnCancel: '&',
+        acbSizeModal: '@',
+        acbPositionButtons: '@',
+        acbBackdrop: '@'
       },
       link: function (scope, element, attr) {
         $(element).on('click', function (e) {
@@ -112,7 +112,7 @@
       controller: directiveConfirmController,
       controllerAs: 'vm',
       bindToController: true
-    };
+    };
     directiveConfirmController.$inject = ["$uibModal", "$translate"];
     return directive;
 
@@ -121,28 +121,28 @@
       var vm = this;
 
       vm.confirmValues = {
-        confirmText: vm.confirmText ? vm.confirmText : "Aceptar",
-        buttonConfirmIcon: vm.buttonConfirmIcon ? vm.buttonConfirmIcon : '',
-        buttonConfirmClass: vm.buttonConfirmClass ? vm.buttonConfirmClass : 'btn',
-        cancelText: vm.cancelText ? vm.cancelText : "Cancelar",
-        buttonCancelIcon: vm.buttonCancelIcon ? vm.buttonCancelIcon : '',
-        buttonCancelClass: vm.buttonCancelClass ? vm.buttonCancelClass : 'btn btn-default',
-        message: vm.message ? vm.message : 'Sample message',
-        title: vm.title ? vm.title : 'Sample title',
-        onConfirm: vm.onConfirm,
-        onCancel: vm.onCancel,
-        positionButtons: vm.positionButtons ? vm.positionButtons : 'right',
-        sizeModal: vm.sizeModal ? vm.sizeModal : 'md',
-        backdrop: vm.backdrop ? vm.backdrop : 'true'
+        acbConfirmText: vm.acbConfirmText ? vm.acbConfirmText : "Ok",
+        acbButtonConfirmIcon: vm.acbButtonConfirmIcon ? vm.acbButtonConfirmIcon : '',
+        acbButtonConfirmClass: vm.acbButtonConfirmClass ? vm.acbButtonConfirmClass : 'btn',
+        acbCancelText: vm.acbCancelText ? vm.acbCancelText : "Cancel",
+        acbButtonCancelIcon: vm.acbButtonCancelIcon ? vm.acbButtonCancelIcon : '',
+        acbButtonCancelClass: vm.acbButtonCancelClass ? vm.acbButtonCancelClass : 'btn btn-default',
+        acbMessage: vm.acbMessage ? vm.acbMessage : '',
+        acbTitle: vm.acbTitle ? vm.acbTitle : '',
+        acbOnConfirm: vm.acbOnConfirm,
+        acbOnCancel: vm.acbOnCancel,
+        acbPositionButtons: vm.acbPositionButtons ? vm.acbPositionButtons : 'right',
+        acbSizeModal: vm.acbSizeModal ? vm.acbSizeModal : 'md',
+        acbBackdrop: vm.acbBackdrop ? vm.acbBackdrop : 'true'
       };
 
       vm.openModal = function () {
         var modalInstance = $uibModal.open({
           keyboard: false,
-          backdrop: vm.confirmValues.backdrop,
+          backdrop: vm.confirmValues.acbBackdrop,
           templateUrl: 'modal-confirm.html',
           controller: 'AngularConfirmBootstrapController',
-          size: vm.confirmValues.sizeModal,
+          size: vm.confirmValues.acbSizeModal,
           controllerAs: 'vm',
           resolve: {
             Setting: function () {
@@ -154,7 +154,7 @@
         });
 
         modalInstance.result.then(function (data) {
-          
+
         });
       };
 
@@ -171,6 +171,6 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('modal-confirm.html',
-    '<div class="modal-header"><button type="button" class="close" ng-click="vm.closeModal()" aria-hidden="true">x</button><h4 class="modal-title">{{vm.dataModal.title}}</h4></div><div class="modal-body"><div class="row"><div class="col-md-12"><h5>{{vm.dataModal.message}}</h5></div></div></div><div class="modal-footer" ng-style="{\'text-align\' : vm.dataModal.positionButtons}"><button type="button" ng-click="vm.actionCancel()" ng-class="vm.dataModal.buttonCancelClass"><i ng-class="vm.dataModal.buttonCancelIcon"></i> {{vm.dataModal.cancelText}}</button> <button type="button" ng-click="vm.actionOk()" ng-class="vm.dataModal.buttonConfirmClass"><i ng-class="vm.dataModal.buttonConfirmIcon"></i> {{vm.dataModal.confirmText}}</button></div>');
+    '<div class="modal-header"><button type="button" class="close" ng-click="vm.closeModal()" aria-hidden="true">x</button><h4 class="modal-title">{{vm.dataModal.acbTitle}}</h4></div><div class="modal-body"><div class="row"><div class="col-md-12"><h5>{{vm.dataModal.acbMessage}}</h5></div></div></div><div class="modal-footer" ng-style="{\'text-align\' : vm.dataModal.acbPositionButtons}"><button type="button" ng-click="vm.actionCancel()" ng-class="vm.dataModal.acbButtonCancelClass"><i ng-class="vm.dataModal.acbButtonCancelIcon"></i> {{vm.dataModal.acbCancelText}}</button> <button type="button" ng-click="vm.actionOk()" ng-class="vm.dataModal.acbButtonConfirmClass"><i ng-class="vm.dataModal.acbButtonConfirmIcon"></i> {{vm.dataModal.acbConfirmText}}</button></div>');
 }]);
 })();

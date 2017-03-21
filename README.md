@@ -12,19 +12,36 @@ In order to use angular-confirm-bootstrap in your project:
 * Use the directive 'angular-confirm-bootstrap' as a html element or attribute
 * You can configure the following params:
 
-    *  confirmText: Type: string, text button action Ok by default 'Ok'
-    *  buttonConfirmClass: Type: string, default: empty
-    *  buttonConfirmIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-    *  cancelText: Type: string, text button action Ok by default 'Cancel'
-    *  buttonCancelClass: Type: string, default: empty
-    *  buttonCancelIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-    *  message: Type: string , main message
-    *  title: Type: string , title modal
-    *  onConfirm: Type: function, callback function
-    *  onCancel: Type: function, callback function
-    *  sizeModal: Type: string, size of modal by default 'lg'
-    *  positionButtons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
-    *  backdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
+    *  acb-confirm-text: Type: string, text button action Ok by default 'Ok'
+    *  acb-button-confirm-class: Type: string, default: empty
+    *  acb-button-confirm-icon: Type: string(<i class="fa fa-..."></i>), default: empty
+    *  acb-cancel-text: Type: string, text button action Ok by default 'Cancel'
+    *  acb-button-cancel-class: Type: string, default: empty
+    *  acb-button-cancel-icon: Type: string(<i class="fa fa-..."></i>), default: empty
+    *  acb-message: Type: string , main message, default: empty
+    *  acb-title: Type: string , title modal, default: empty
+    *  acb-on-confirm: Type: function, callback function
+    *  acb-on-cancel: Type: function, callback function
+    *  acb-size-modal: Type: string, size of modal by default 'lg'
+    *  acb-position-buttons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
+    *  acb-backdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
+
+## Example
+
+    <button 
+        type="button" 
+        class="btn btn-xs btn-danger" 
+        angular-confirm-bootstrap  
+        acb-title="{{ title }}" 
+        acb-message="{{ message }}" 
+        acb-button-confirm-class="btn btn-success"
+        acb-button-confirm-icon="fa fa-trash"
+        acb-button-cancel-icon="fa fa-times" 
+        acb-on-confirm="confirmClicked = true"
+        acb-on-cancel="cancelCliked = true"
+        acb-size-modal="md" >
+        <i class="fa fa-trash"></i>
+    </button>
 
 ## License
 

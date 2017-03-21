@@ -14,18 +14,18 @@
     };
 
     vm.actionCancel = function () {
-      if (vm.dataModal.onCancel !== undefined) {
-        if (typeof(vm.dataModal.onCancel) === typeof(Function)) {
-          vm.dataModal.onCancel();
+      if (vm.dataModal.acbOnCancel !== undefined) {
+        if (typeof(vm.dataModal.acbOnCancel) === typeof(Function)) {
+          vm.dataModal.acbOnCancel();
         }
       }
       $uibModalInstance.close(false);
     };
 
     vm.actionOk = function () {
-      if (vm.dataModal.onConfirm !== undefined) {
-        if (typeof(vm.dataModal.onConfirm) === typeof(Function)) {
-          vm.dataModal.onConfirm();
+      if (vm.dataModal.acbOnConfirm !== undefined) {
+        if (typeof(vm.dataModal.acbOnConfirm) === typeof(Function)) {
+          vm.dataModal.acbOnConfirm();
         }
       }
       $uibModalInstance.close(false);
