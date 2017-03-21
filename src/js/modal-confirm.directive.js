@@ -9,19 +9,19 @@
   function angularConfirmBootstrapDirective() {
     /**
      * directive.scope.options {
-        *  confirmText: Type: string, text button action Ok by default 'Ok'
-        *  buttonConfirmClass: Type: string, default: empty
-        *  buttonConfirmIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-        *  cancelText: Type: string, text button action Ok by default 'Cancel'
-        *  buttonCancelClass: Type: string, default: empty
-        *  buttonCancelIcon: Type: string(<i class="fa fa-..."></i>), default: empty
-        *  message: Type: string , main message
-        *  title: Type: string , title modal
-        *  onConfirm: Type: function, callback function
-        *  onCancel: Type: function, callback function
-        *  sizeModal: Type: string, size of modal by default 'lg'
-        *  positionButtons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
-        *  backdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
+        *  acbConfirmText: Type: string, text button action Ok by default 'Ok'
+        *  acbButtonConfirmClass: Type: string, default: empty
+        *  acbButtonConfirmIcon: Type: string(<i class="fa fa-..."></i>), default: empty
+        *  acbCancelText: Type: string, text button action Ok by default 'Cancel'
+        *  acbButtonCancelClass: Type: string, default: empty
+        *  acbButtonCancelIcon: Type: string(<i class="fa fa-..."></i>), default: empty
+        *  acbMessage: Type: string , main message
+        *  acbTitle: Type: string , title modal
+        *  acbOnConfirm: Type: function, callback function
+        *  acbOnCancel: Type: function, callback function
+        *  acbSizeModal: Type: string, size of modal by default 'lg'
+        *  acbPositionButtons: Type: string, Allowed Values:[left, center, right(default)],  position of buttons 'Ok' and 'Cancel'
+        *  acbBackdrop: Type: boolean|string, Allowed Values:[static(disables modal closing by click on the backdrop), false, true(default)], controls presence of a backdrop.
     * }
      **/
 
@@ -30,19 +30,19 @@
       restrict: 'EA',
       templateUrl: '',
       scope: {
-        confirmText: '@',
-        buttonConfirmClass: '@',
-        buttonConfirmIcon: '@',
-        cancelText: '@',
-        buttonCancelClass: '@',
-        buttonCancelIcon: '@',
-        message: '@',
-        title: '@',
-        onConfirm: '&',
-        onCancel: '&',
-        sizeModal: '@',
-        positionButtons: '@',
-        backdrop: '@'
+        acbConfirmText: '@',
+        acbButtonConfirmClass: '@',
+        acbButtonConfirmIcon: '@',
+        acbCancelText: '@',
+        acbButtonCancelClass: '@',
+        acbButtonCancelIcon: '@',
+        acbMessage: '@',
+        acbTitle: '@',
+        acbOnConfirm: '&',
+        acbOnCancel: '&',
+        acbSizeModal: '@',
+        acbPositionButtons: '@',
+        acbBackdrop: '@'
       },
       link: function (scope, element, attr) {
         $(element).on('click', function (e) {
@@ -61,28 +61,28 @@
       var vm = this;
 
       vm.confirmValues = {
-        confirmText: vm.confirmText ? vm.confirmText : "Aceptar",
-        buttonConfirmIcon: vm.buttonConfirmIcon ? vm.buttonConfirmIcon : '',
-        buttonConfirmClass: vm.buttonConfirmClass ? vm.buttonConfirmClass : 'btn',
-        cancelText: vm.cancelText ? vm.cancelText : "Cancelar",
-        buttonCancelIcon: vm.buttonCancelIcon ? vm.buttonCancelIcon : '',
-        buttonCancelClass: vm.buttonCancelClass ? vm.buttonCancelClass : 'btn btn-default',
-        message: vm.message ? vm.message : '',
-        title: vm.title ? vm.title : '',
-        onConfirm: vm.onConfirm,
-        onCancel: vm.onCancel,
-        positionButtons: vm.positionButtons ? vm.positionButtons : 'right',
-        sizeModal: vm.sizeModal ? vm.sizeModal : 'md',
-        backdrop: vm.backdrop ? vm.backdrop : 'true'
+        acbConfirmText: vm.acbConfirmText ? vm.acbConfirmText : "Ok",
+        acbButtonConfirmIcon: vm.acbButtonConfirmIcon ? vm.acbButtonConfirmIcon : '',
+        acbButtonConfirmClass: vm.acbButtonConfirmClass ? vm.acbButtonConfirmClass : 'btn',
+        acbCancelText: vm.acbCancelText ? vm.acbCancelText : "Cancel",
+        acbButtonCancelIcon: vm.acbButtonCancelIcon ? vm.acbButtonCancelIcon : '',
+        acbButtonCancelClass: vm.acbButtonCancelClass ? vm.acbButtonCancelClass : 'btn btn-default',
+        acbMessage: vm.acbMessage ? vm.acbMessage : '',
+        acbTitle: vm.acbTitle ? vm.acbTitle : '',
+        acbOnConfirm: vm.acbOnConfirm,
+        acbOnCancel: vm.acbOnCancel,
+        acbPositionButtons: vm.acbPositionButtons ? vm.acbPositionButtons : 'right',
+        acbSizeModal: vm.acbSizeModal ? vm.acbSizeModal : 'md',
+        acbBackdrop: vm.acbBackdrop ? vm.acbBackdrop : 'true'
       };
 
       vm.openModal = function () {
         var modalInstance = $uibModal.open({
           keyboard: false,
-          backdrop: vm.confirmValues.backdrop,
+          backdrop: vm.confirmValues.acbBackdrop,
           templateUrl: 'modal-confirm.html',
           controller: 'AngularConfirmBootstrapController',
-          size: vm.confirmValues.sizeModal,
+          size: vm.confirmValues.acbSizeModal,
           controllerAs: 'vm',
           resolve: {
             Setting: function () {
